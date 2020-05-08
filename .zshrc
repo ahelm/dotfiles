@@ -1,1 +1,188 @@
-/Users/anton/Documents/Projects/dotfiles/shells/zsh/zshrc
+# vim: set foldmethod=marker foldlevel=0 nomodeline:
+# Custom PATH and enviroment options {{{
+# - setup PATH and MANPATH for using
+if [[ $OSTYPE == *darwin* ]]; then
+  export PATH="/opt/X11/bin:/Library/TeX/texbin:${PATH}"
+  export PATH="/usr/bin:/bin:/usr/sbin:/sbin:${PATH}"
+  export PATH="/usr/local/sbin:/usr/local/bin:${PATH}"
+  export MANPATH="/usr/local/man:${MANPATH}"
+fi
+
+# - VisXD
+# split by dot if needed
+host_split=("${(@s/./)HOST}")
+if [[ "$HOST" == "mbp-anton" || "${host_split[1]}" == "epp-167" || "${host_split[1]}" == "pulsar" ]]; then
+  VISXD_HOME="/Users/anton/Documents/Projects/visxd"
+fi
+
+if [ -d "$VISXD_HOME" ]; then
+  export IDL_PATH="<IDL_DEFAULT>:+${VISXD_HOME}"
+  unset VISXD_HOME
+fi
+# - Default editor
+if [ "$(command -v nvim)" ]; then
+  export EDITOR="nvim"
+else
+  export EDITOR="vim"
+fi
+
+# - Load rbenv automatically by appending the following to ~/.zshrc:
+if [ "$(command -v rbenv)" ]; then
+  eval "$(rbenv init -)"
+fi
+
+# - specific settings to MacBook Pro 13
+if [[ "$HOST" == mbp-anton ]]; then
+  # adds personal binaries
+  export PATH="/Users/anton/local/bin:${PATH}"
+  # homebrew specific building (best setup in terms of heat/progress)
+  export HOMEBREW_MAKE_JOBS=2
+fi
+
+# enable conda enviroment
+# if [[ "$HOST" == mbp-anton ]]; then
+#   # own MacBook use previous installed anaconda enviroment
+#   export BASE_CONDA="/usr/local/anaconda3"
+# else
+#   # set conda base to miniconda install
+#   export BASE_CONDA="${HOME}/miniconda3"
+# fi
+export BASE_CONDA="${HOME}/miniconda3"
+
+if [ -f "${BASE_CONDA}/etc/profile.d/conda.sh" ]; then
+  . ${BASE_CONDA}/etc/profile.d/conda.sh
+fi
+
+# - sources local RUST installation
+if [ -d "${HOME}/.cargo" ]; then
+  source ${HOME}/.cargo/env
+fi
+
+# - source intel compiler enviroment
+if [ -f "/opt/intel/compilers_and_libraries/mac/bin/compilervars.sh" ]; then
+  source /opt/intel/compilers_and_libraries/mac/bin/compilervars.sh intel64 -platform mac
+fi
+
+# - Locale settings
+# fixes issues with promt on iTerm otherwise tab-compilation breaks the width
+# for the shell
+export LANG="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# - use iterm2 integration
+if [ -f "${HOME}/.iterm2_shell_integration.zsh" ]; then
+  source ~/.iterm2_shell_integration.zsh
+fi
+# }}}
+# Plugins {{{
+# - Using ZPLUG for configuration of zsh
+export ZPLUG_HOME="${HOME}/.zplug"
+source $ZPLUG_HOME/init.zsh
+
+# - use dracula theme
+zplug "dracula/zsh", as:theme
+
+# - syntax highlighting in a fast way
+zplug "zdharma/fast-syntax-highlighting"
+
+# - oh-my-zsh completion
+zplug "robbyrussell/oh-my-zsh", use:"lib/history.zsh"
+HYPHEN_INSENSITIVE="true"
+zplug "robbyrussell/oh-my-zsh", use:"lib/completion.zsh"
+zplug "robbyrussell/oh-my-zsh", use:"lib/git.zsh"
+zplug "robbyrussell/oh-my-zsh", use:"lib/clipboard.zsh", if:"[[ ${OSTYPE} == *darwin* ]]"
+zplug "robbyrussell/oh-my-zsh", use:"lib/misc.zsh"
+zplug "robbyrussell/oh-my-zsh", use:"lib/key-bindings.zsh"
+zplug "robbyrussell/oh-my-zsh", use:"lib/grep.zsh"
+zplug "robbyrussell/oh-my-zsh", use:"lib/directories.zsh"
+zplug "robbyrussell/oh-my-zsh", use:"lib/theme-and-appearance.zsh"
+zplug "plugins/common-aliases", from:oh-my-zsh
+# zplug "plugins/osx", from:oh-my-zsh, if:"[[ ${OSTYPE} == *darwin* ]]"
+
+# - install plugins if not installed yet
+# if ! zplug check --verbose; then
+#   printf "Install? [y/N]: "
+#   if read -q; then
+#     echo; zplug install
+#   fi
+# fi
+
+# - load plugins after installation
+zplug load
+
+# use fzf functionality for history
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+  # remove binding required for vim+iTerm to copy
+  bindkey -r "^[c"
+else
+  echo ".fzf.zsh not found! Check if fzf is installed!"
+fi
+
+# }}}
+# Custom settigns {{{
+# - fix for 'cd ..' tab-completion
+zstyle ':completion:*' special-dirs true
+
+# - Brew based completions
+if [ -d "/usr/local/share/zsh-completions" ]; then
+  fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+
+# - use hub as git interface (easier way to work with Github)
+if [ "$(command -v hub)" ]; then
+  alias git=hub
+fi
+
+# - use nvim as vim
+if [ "$(command -v nvim)" ]; then
+  alias vim=nvim
+fi
+
+# - make tree be aware of color and also ignore files
+alias tree="tree -C -I '*pycache*'"
+
+# - make `conda activate` alias
+alias ca="conda activate"
+
+# Load pyenv automatically by appending
+# the following to ~/.zshrc:
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# - PIPENV is to verbose
+export PIPENV_VERBOSITY=-1
+
+# - Cargo for rusr
+if [ -d "$HOME/.cargo" ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+if [ -d "$HOME/.poetry" ]; then
+  export PATH="$HOME/.poetry/bin:$PATH"
+  rm -f ~/.zcompdump; compinit
+fi
+
+# run ipdb
+function pydb() {
+  poetry version 2>&1 > /dev/null
+  if [ $? -eq 0 ]; then
+    poetry run ipython -c "%run -d ${*}"
+  else
+    ipython -c "%run -d ${*}"
+  fi
+}
+
+export GPG_TTY=$(tty)
+export HYPOTHESIS_PROFILE=dev
+
+alias trash="rmtrash"
+alias del="rmtrash"
+# }}}
+alias config='/usr/bin/git --git-dir=/Users/anton/.cfg/ --work-tree=/Users/anton'
