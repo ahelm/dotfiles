@@ -1,1 +1,0 @@
-/Users/anton/Documents/Projects/dotfiles/editors/vim/vimrc
