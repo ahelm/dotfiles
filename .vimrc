@@ -1,4 +1,24 @@
-echo "Hello World"
+" .vimrc for MacBook 13inch 2015
+" 
+call plug#begin('~/.vim/plugged')
+" Colortheme
+Plug 'dracula/vim'
+call plug#end()
+
+" styping
+syntax on                   " use syntax highlighting
+color dracula               " best Colorscheme ever
+set number                  " show line numbers
+set cursorline              " highlight current line
+set wildmenu                " visual autocomplete for command menu
+set showmatch               " highlight matching [{()}]
+filetype indent plugin on   " automatic lang-dependent ident
+set mouse=a                 " allow mouse usage
+set clipboard+=unnamedplus  " using system clipboard on mac
+if $TERM_PROGRAM =~? 'iTerm'
+  set termguicolors	    " use guicolors in iTerm
+endif
+
 "  " vim: set foldmethod=marker foldlevel=0 nomodeline colorcolumn=80:
 "  " *****************************************************************************
 "  " {{{ Defaults settings
