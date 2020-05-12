@@ -162,7 +162,16 @@ let g:indentLine_char = '▏'
 let g:indentLine_color_gui = '#424450'
 
 "" FZF settings
-let g:fzf_tags_command = 'ctags -R --exclude=.mypy_cache --exclude=.git --exclude=.venv --exclude=.tox --exclude=docs --exclude=.vscode --exclude=.vim'
+let g:fzf_tags_command = 
+      \'ctags -R ' .
+      \'--exclude=.mypy_cache ' .
+      \'--exclude=.git ' .
+      \'--exclude=.venv ' .
+      \'--exclude=.tox ' . 
+      \'--exclude=docs ' . 
+      \'--exclude=.vscode ' .
+      \'--exclude=.vim'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'border': 'rounded' } }
 
 "  " vim: set foldmethod=marker foldlevel=0 nomodeline colorcolumn=80:
 "  " *****************************************************************************
