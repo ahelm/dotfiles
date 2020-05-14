@@ -15,6 +15,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-python/python-syntax'
 Plug 'Yggdroot/indentLine'
 Plug 'cespare/vim-toml'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 "" General settings
