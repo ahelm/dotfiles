@@ -32,6 +32,7 @@ set incsearch                                 " search as characters are entered
 set hlsearch                                  " highlight matches
 set hidden                                    " TextEdit might fail if hidden is not set
 set signcolumn=yes                            " 
+set nowrap                                    " Do not wrap lines
 
 
 "" Keyboard shortcuts
@@ -162,6 +163,7 @@ let g:indentLine_char = '▏'
 let g:indentLine_color_gui = '#424450'
 
 "" FZF settings
+" Removes any additional space from generation of tags
 let g:fzf_tags_command = 
       \'ctags -R ' .
       \'--exclude=.mypy_cache ' .
