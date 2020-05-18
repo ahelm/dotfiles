@@ -1,0 +1,22 @@
+{
+  "diagnostic.virtualText": true,
+  "diagnostic.errorSign": "✘",
+  "diagnostic.infoSign": "!",
+  "diagnostic.hintSign": "➤",
+  "cSpell.userWords": [
+    "Yggdroot",
+    "astype",
+    "cespare",
+    "funcobj",
+    "junegunn",
+    "loadtxt",
+    "mypy",
+    "ndarray",
+    "neoclide",
+    "numpy",
+    "savgol",
+    "tpope",
+    "tqdm",
+    "venv"
+  ]
+}
