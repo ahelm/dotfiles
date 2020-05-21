@@ -1,3 +1,9 @@
 [submodule ".zsh/zsh"]
 	path = .zsh/dracula-theme
 	url = https://github.com/dracula/zsh.git
+[submodule ".zsh/fast-syntax-highlighting"]
+	path = .zsh/fast-syntax-highlighting
+	url = https://github.com/zdharma/fast-syntax-highlighting.git
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
