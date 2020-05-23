@@ -99,12 +99,6 @@ else
   warning "No valid 'fast-syntax-highlighting' directory found"
 fi
 
-
-
-# - fix for 'cd ..' tab-completion
-zstyle ':completion:*' special-dirs true
-
-
 # - use hub as git interface (easier way to work with Github)
 if [ "$(command -v hub)" ]; then
   alias git=hub
