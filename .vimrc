@@ -13,7 +13,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-python/python-syntax'
-Plug 'Yggdroot/indentLine'
 Plug 'cespare/vim-toml'
 Plug 'tpope/vim-commentary'
 call plug#end()
@@ -74,7 +73,7 @@ set showmatch               " highlight matching [{()}]
 filetype indent plugin on   " automatic lang-dependent ident
 set mouse=a                 " allow mouse usage
 set clipboard+=unnamedplus  " using system clipboard on mac
-set termguicolors	    " use guicolors in iTerm
+set termguicolors	          " use guicolors in iTerm
 
 "" Airline settings
 let g:airline#extensions#tabline#enabled = 1
@@ -158,10 +157,6 @@ nmap <leader>a <Plug>(coc-codeaction-selected)
 
 "" coc-explorer
 nmap <C-N> :CocCommand explorer<CR>
-
-"" IndentLine
-let g:indentLine_char = '▏'
-let g:indentLine_color_gui = '#424450'
 
 "" FZF settings
 " Removes any additional space from generation of tags
