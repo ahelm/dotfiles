@@ -125,5 +125,3 @@ alias config='/usr/bin/git --git-dir=/Users/anton/.cfg/ --work-tree=/Users/anton
 alias ls="exa --git"
 alias la="ls -lFha"
 
-# .dotnet framework
-export PATH=$PATH:"/Users/anton/.dotnet"
