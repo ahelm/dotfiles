@@ -111,6 +111,7 @@ alias tree="tree -C -I '*pycache*'"
 # the following to ~/.zshrc:
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="/Users/anton/.pyenv"
 
 export GPG_TTY=$(tty)
 export HYPOTHESIS_PROFILE=dev
@@ -123,3 +124,6 @@ alias config='/usr/bin/git --git-dir=/Users/anton/.cfg/ --work-tree=/Users/anton
 # use exa as ls
 alias ls="exa --git"
 alias la="ls -lFha"
+
+# .dotnet framework
+export PATH=$PATH:"/Users/anton/.dotnet"

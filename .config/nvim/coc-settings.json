@@ -17,6 +17,8 @@
     "savgol",
     "tpope",
     "tqdm",
+    "ufunc",
+    "ufuncs",
     "venv"
   ]
 }
