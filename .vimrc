@@ -12,7 +12,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-python/python-syntax'
+Plug 'sheerun/vim-polyglot'
 Plug 'cespare/vim-toml'
 Plug 'tpope/vim-commentary'
 call plug#end()
@@ -83,9 +83,6 @@ let g:airline#extensions#tabline#right_sep = ' '
 let g:airline#extensions#tabline#right_alt_sep = ' '
 " remove default option from right side -> less information
 let g:airline_section_z = '%4l/%L:%3v'
-
-"" Python settings
-let g:python_highlight_all = 1
 
 "" Coc settings
 autocmd FileType json syntax match Comment +\/\/.\+$+
