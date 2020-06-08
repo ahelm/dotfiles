@@ -168,3 +168,10 @@ let g:fzf_tags_command =
       \'--exclude=.vim'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'border': 'rounded' } }
 
+" Helper for printing highlight region under cursor
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
