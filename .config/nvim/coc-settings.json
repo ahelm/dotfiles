@@ -18,6 +18,8 @@
     "tqdm",
     "ufunc",
     "ufuncs",
-    "venv"
-  ]
+    "venv",
+    "clangd"
+  ],
+  "clangd.path": "/Users/anton/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
 }
