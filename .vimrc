@@ -10,7 +10,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/gv.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'cespare/vim-toml'
@@ -67,6 +69,7 @@ map Q <Nop>
 syntax on                   " use syntax highlighting
 color dracula               " best Colorscheme ever
 set number                  " show line numbers
+set relativenumber          " use relative line numbers
 set cursorline              " highlight current line
 set wildmenu                " visual autocomplete for command menu
 set showmatch               " highlight matching [{()}]
@@ -167,6 +170,13 @@ let g:fzf_tags_command =
       \'--exclude=.vscode ' .
       \'--exclude=.vim'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'border': 'rounded' } }
+
+" use relative line numbers and switch when leaving/entering buffer
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 " Helper for printing highlight region under cursor
 function! SynStack()
