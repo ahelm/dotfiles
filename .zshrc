@@ -125,3 +125,6 @@ alias config='/usr/bin/git --git-dir=/Users/anton/.cfg/ --work-tree=/Users/anton
 alias ls="exa --git"
 alias la="ls -lFha"
 
+# Rust installation
+export PATH="$HOME/.cargo/bin:$PATH"
+
