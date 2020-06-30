@@ -127,5 +127,9 @@ alias la="ls -lFha"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Add custom completion to fpath and finally build completions
-fpath+=~/.zsh/completions
+if [ -d "${HOME}/.zsh/completions" ]; then
+  fpath+=~/.zsh/completions
+else
+  warning "No valid custom directory found for zsh-completion"
+fi
 autoload -Uz compinit && compinit
