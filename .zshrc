@@ -36,9 +36,7 @@ export LC_ALL="en_US.UTF-8"
 # Homebrews configurations
 # completion for zsh
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-  autoload -Uz compinit
-  compinit
+  fpath+=$(brew --prefix)/share/zsh/site-functions
 fi
 # Number of parallel make tasks for homebrew
 export HOMEBREW_MAKE_JOBS=2
@@ -128,3 +126,6 @@ alias la="ls -lFha"
 # Rust installation
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Add custom completion to fpath and finally build completions
+fpath+=~/.zsh/completions
+autoload -Uz compinit && compinit
