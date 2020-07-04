@@ -186,3 +186,5 @@ function! SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+" host_program
+let g:python3_host_prog='/Users/anton/.pyenv/versions/neovim/bin/python'
