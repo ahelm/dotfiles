@@ -120,7 +120,7 @@ alias del="rmtrash"
 alias config='/usr/bin/git --git-dir=/Users/anton/.cfg/ --work-tree=/Users/anton'
 
 # use exa as ls
-alias ls="exa --git"
+alias ls="exa"
 alias la="ls -lFha"
 
 # Rust installation
