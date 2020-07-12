@@ -4,8 +4,10 @@
   "diagnostic.infoSign": "➤",
   "diagnostic.hintSign": "◆",
   "cSpell.userWords": [
+    "SYCL",
     "astype",
     "cespare",
+    "clangd",
     "funcobj",
     "junegunn",
     "loadtxt",
@@ -18,8 +20,8 @@
     "tqdm",
     "ufunc",
     "ufuncs",
-    "venv",
-    "clangd"
+    "venv"
   ],
-  "clangd.path": "/Users/anton/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
+  "clangd.path": "/Users/anton/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
+  "xml.java.home": "/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home"
 }
