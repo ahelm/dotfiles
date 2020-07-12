@@ -17,6 +17,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'cespare/vim-toml'
 Plug 'tpope/vim-commentary'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
 
 "" General settings
@@ -150,6 +151,10 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Format document
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 "" coc-spell-checker
 vmap <leader>a <Plug>(coc-codeaction-selected)
