@@ -18,6 +18,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'cespare/vim-toml'
 Plug 'tpope/vim-commentary'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 "" General settings
