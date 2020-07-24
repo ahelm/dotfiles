@@ -22,7 +22,7 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 "" General settings
-let g:mapleader='\'         			            " use ',' as leader
+let g:mapleader=','         			            " use ',' as leader
 set autoread                                	" reload changed buffer
 au FocusGained,BufEnter   * :checktime      	" update at change of focus
 set tabstop=2       				                  " number of visual spaces per TAB
