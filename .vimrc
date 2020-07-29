@@ -156,7 +156,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Format document
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>F :update :call CocAction("format")<CR>
+nmap <leader>F :call CocAction("format")<CR>
 
 "" coc-spell-checker
 vmap <leader>a <Plug>(coc-codeaction-selected)
