@@ -19,6 +19,9 @@ Plug 'cespare/vim-toml'
 Plug 'tpope/vim-commentary'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'ryanoasis/vim-devicons'
+Plug 'vhdirk/vim-cmake'
+Plug 'tpope/vim-dispatch'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 call plug#end()
 
 "" General settings
