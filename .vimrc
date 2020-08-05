@@ -55,10 +55,10 @@ nnoremap <leader>m  :bnext<CR>
 inoremap <leader>n  <Esc>:bprevious<CR>i
 inoremap <leader>m  <Esc>:bnext<CR>i
 " Window management
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 " Searching
 nnoremap <space>          /
 nnoremap <leader><space> :nohlsearch<CR>
@@ -133,8 +133,8 @@ else
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> gn <Plug>(coc-diagnostic-prev)
+nmap <silent> gm <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -196,5 +196,28 @@ function! SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+
 " host_program
 let g:python3_host_prog='/Users/anton/.pyenv/versions/neovim/bin/python'
+
+"" Neovims custom builtin terminal
+" Notes:
+" - currently we require startinsert so that we can actually leave the buffer
+" - otherwise terminal behaves similar to a split
+" - also removed the default behavior of terminal opening new buffer
+
+" Start terminal in insert mode
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
+" opening terminal in different splits
+nnoremap <silent> tt :rightbelow:new<CR>:terminal<CR>:startinsert<CR>
+nnoremap <silent> tv :rightbelow:vnew<CR>:terminal<CR>:startinsert<CR>
+nnoremap <silent> th :rightbelow:new<CR>:terminal<CR>:startinsert<CR>
+
+tnoremap <C-x>      <C-\><C-n><C-w>q
+tnoremap <leader>q  <C-\><C-n>:q<CR>
+tnoremap <Esc>      <C-\><C-n>
+tnoremap <A-h>      <C-\><C-N><C-w>h
+tnoremap <A-j>      <C-\><C-N><C-w>j
+tnoremap <A-k>      <C-\><C-N><C-w>k
+tnoremap <A-l>      <C-\><C-N><C-w>l
