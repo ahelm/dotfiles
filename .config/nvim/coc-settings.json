@@ -5,10 +5,13 @@
   "diagnostic.hintSign": "◆",
   "cSpell.userWords": [
     "SYCL",
+    "ahpic",
+    "arange",
     "astype",
     "cespare",
     "clangd",
     "funcobj",
+    "inputdeck",
     "junegunn",
     "loadtxt",
     "mypy",
