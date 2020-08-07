@@ -229,7 +229,7 @@ nnoremap <silent> th :rightbelow:new<CR>:terminal<CR>:startinsert<CR>
 
 tnoremap <C-x>      <C-\><C-n><C-w>q
 tnoremap <leader>q  <C-\><C-n>:q<CR>
-tnoremap <Esc>      <C-\><C-n>
+" tnoremap <Esc>      <C-\><C-n>
 tnoremap <A-h>      <C-\><C-N><C-w>h
 tnoremap <A-j>      <C-\><C-N><C-w>j
 tnoremap <A-k>      <C-\><C-N><C-w>k
