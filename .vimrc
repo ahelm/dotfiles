@@ -159,9 +159,9 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Format document
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>F :call CocAction("format")<CR>
+xnoremap <leader>f <Plug>(coc-format-selected)
+nnoremap <leader>f <Plug>(coc-format-selected)
+nnoremap <leader>F :call CocAction("format")<CR>
 
 "" coc-spell-checker
 vmap <leader>a <Plug>(coc-codeaction-selected)
@@ -234,3 +234,6 @@ tnoremap <A-h>      <C-\><C-N><C-w>h
 tnoremap <A-j>      <C-\><C-N><C-w>j
 tnoremap <A-k>      <C-\><C-N><C-w>k
 tnoremap <A-l>      <C-\><C-N><C-w>l
+
+"" Vista configuration
+nnoremap <silent><leader>v :Vista!!<CR>
