@@ -22,6 +22,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vhdirk/vim-cmake'
 Plug 'tpope/vim-dispatch'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'neoclide/jsonc.vim'
+Plug 'liuchengxu/vista.vim'
 call plug#end()
 
 "" General settings
@@ -182,9 +184,17 @@ let g:fzf_tags_command =
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'border': 'rounded' } }
 
 " use relative line numbers and switch when leaving/entering buffer
+function! s:numbers_based_on_ft()
+  let excluded_ft = ['vista', 'help']
+  if (index(excluded_ft, &filetype) < 0)
+    set relativenumber
+  endif
+endfunction
+
 augroup numbertoggle
   autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufEnter,FocusGained,InsertLeave * :call <SID>numbers_based_on_ft()
+  autocmd TermEnter,TermOpen               * set norelativenumber | set nonumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
@@ -199,6 +209,9 @@ endfunc
 
 " host_program
 let g:python3_host_prog='/Users/anton/.pyenv/versions/neovim/bin/python'
+
+" tsconfig.json is actually jsonc, help TypeScript set the correct filetype
+autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
 "" Neovims custom builtin terminal
 " Notes:
