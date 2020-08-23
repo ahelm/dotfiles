@@ -183,18 +183,13 @@ let g:fzf_tags_command =
       \'--exclude=.vim'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'border': 'rounded' } }
 
-" use relative line numbers and switch when leaving/entering buffer
-function! s:numbers_based_on_ft()
-  let excluded_ft = ['vista', 'help']
-  if (index(excluded_ft, &filetype) < 0)
-    set relativenumber
-  endif
-endfunction
-
 augroup numbertoggle
+  let s:excluded_ft = ['vista', 'help', 'coc-explorer']
   autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * :call <SID>numbers_based_on_ft()
-  autocmd TermEnter,TermOpen               * set norelativenumber | set nonumber
+  autocmd BufEnter,FocusGained,InsertLeave * if index(s:excluded_ft, &filetype) < 0 && &buftype != 'terminal' |
+  \                                            set relativenumber |
+  \                                          endif
+  autocmd TermOpen                         * set nonumber | set norelativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
@@ -228,7 +223,7 @@ nnoremap <silent> tv :rightbelow:vnew<CR>:terminal<CR>:startinsert<CR>
 nnoremap <silent> th :rightbelow:new<CR>:terminal<CR>:startinsert<CR>
 
 tnoremap <C-x>      <C-\><C-n><C-w>q
-tnoremap <leader>q  <C-\><C-n>:q<CR>
+tnoremap <leader>q  <C-\><C-n>:bd!<CR>
 " tnoremap <Esc>      <C-\><C-n>
 tnoremap <A-h>      <C-\><C-N><C-w>h
 tnoremap <A-j>      <C-\><C-N><C-w>j
