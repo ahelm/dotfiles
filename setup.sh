@@ -1,4 +1,11 @@
 #!/bin/bash
+err() {
+  > &2 echo "ERROR:: $1"
+}
+warn() {
+  echo "> $1"
+}
+
 link() {
   local from=$PWD/$1
   local to=$2
