@@ -1,6 +1,6 @@
 #!/bin/bash
 err() {
-  > &2 echo "ERROR:: $1"
+  >&2 echo "ERROR:: $1"
 }
 warn() {
   echo "> $1"
