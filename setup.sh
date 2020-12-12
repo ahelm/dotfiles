@@ -20,3 +20,4 @@ link() {
 
 # zshrc
 link "zshrc" "${HOME}/.zshrc"
+link "gitconfig" "${HOME}/.gitconfig"
