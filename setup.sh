@@ -13,11 +13,14 @@ link() {
   local from=$PWD/$1
   local to=$2
 
+  # issues with from/to
   [ ! -f "$1" ] && err "File '$1' does not exist" && exit
-
-  [ -L "$2" ] && warn "link for '$2' already exist ... skpping" && return
   [ -f "$2" ] && err "'$2' already exist and is file ... aborting" && exit
 
+  # link already present
+  [ -L "$2" ] && warn "link for '$2' already exist ... skpping" && return
+
+  # perform linking
   log "linking '$1' to '$2'"
   ln -s $from $to
 }
