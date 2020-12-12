@@ -1,6 +1,6 @@
 #!/bin/bash
 err() {
-  >&2 echo "ERROR:: $1"
+  echo >&2 "ERROR:: $1"
 }
 warn() {
   echo "WARN:: $1"
@@ -14,17 +14,18 @@ link() {
   local to=$2
 
   # issues with from/to
-  [ ! -f "$1" ] && err "File '$1' does not exist" && exit
-  [ -f "$2" ] && err "'$2' already exist and is file ... aborting" && exit
+  [ ! -f "$from" ] && err "File '$from' does not exist ... aborting" && exit
+  [ -f "$to" ] && [ ! -L "$to" ] && err "'$to' already exist and is file ... aborting" && exit
 
   # link already present
-  [ -L "$2" ] && warn "link for '$2' already exist ... skpping" && return
+  [ -L "$to" ] && warn "link for '$to' already exist ... skpping" && return
 
   # perform linking
-  log "linking '$1' to '$2'"
+  log "linking '$1' to '$to'"
   ln -s $from $to
 }
 
 # zshrc
 link "zshrc" "${HOME}/.zshrc"
 link "gitconfig" "${HOME}/.gitconfig"
+link "gitignore" "${HOME}/.gitignore"
