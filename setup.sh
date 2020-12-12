@@ -3,6 +3,9 @@ err() {
   >&2 echo "ERROR:: $1"
 }
 warn() {
+  echo "WARN:: $1"
+}
+log() {
   echo "> $1"
 }
 
@@ -15,6 +18,7 @@ link() {
   [ -L "$2" ] && warn "link for '$2' already exist ... skpping" && return
   [ -f "$2" ] && err "'$2' already exist and is file ... aborting" && exit
 
+  log "linking '$1' to '$2'"
   ln -s $from $to
 }
 
