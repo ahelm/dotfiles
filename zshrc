@@ -1,5 +1,5 @@
 # homebrew setup -> use m1 version by default
-alias brew=/opt/homebrew/bin/brew
+alias m1brew=/opt/homebrew/bin/brew
 alias rosettabrew="arch -x86_64 /usr/local/bin/brew"
 
 # local bins are used for pipx
