@@ -29,3 +29,5 @@ link() {
 link "zshrc" "${HOME}/.zshrc"
 link "gitconfig" "${HOME}/.gitconfig"
 link "gitignore" "${HOME}/.gitignore"
+link "zshenv" "${HOME}/.zshenv
+
