@@ -25,9 +25,10 @@ link() {
   ln -s $from $to
 }
 
-# zshrc
+# Linking of diffenrent files
+ln -sf $PWD ${HOME}/.dotfiles
 link "zshrc" "${HOME}/.zshrc"
 link "gitconfig" "${HOME}/.gitconfig"
 link "gitignore" "${HOME}/.gitignore"
-link "zshenv" "${HOME}/.zshenv
-
+link "zshenv" "${HOME}/.zshenv"
+link "vimrc" "${HOME}/.vimrc"
