@@ -22,7 +22,7 @@ link() {
 
   # perform linking
   log "linking '$1' to '$to'"
-  ln -s $from $to
+  ln -v -s $from $to
 }
 
 # Linking of diffenrent files
