@@ -12,6 +12,7 @@ autoload -Uz compinit && compinit
 if [ -d $ZSH ]; then
   source $ZSH/general.zsh
   source $ZSH/completion.zsh
+  source $ZSH/theme.zsh
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   echo "'$ZSH' does not exist!"

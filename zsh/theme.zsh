@@ -1,0 +1,1 @@
+export PROMPT=$'\e[2;37m»\e[0m '
