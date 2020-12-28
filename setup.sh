@@ -26,7 +26,13 @@ link() {
 }
 
 # Linking of diffenrent files
-ln -sf $PWD ${HOME}/.dotfiles
+if [ -L "${HOME}/.dotfiles" ]; then
+  warn "'${HOME}/.dotfiles' already exist, relinking"
+  rm "${HOME}/.dotfiles"
+  ln -s $PWD ${HOME}/.dotfiles
+else
+  ln -s $PWD ${HOME}/.dotfiles
+fi
 link "zshrc" "${HOME}/.zshrc"
 link "gitconfig" "${HOME}/.gitconfig"
 link "gitignore" "${HOME}/.gitignore"
