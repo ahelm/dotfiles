@@ -4,3 +4,7 @@
 
 export ZSH_CACHE_DIR="${HOME}/.zshcache"
 export ZSH="${HOME}/.dotfiles/zsh"
+
+# `bat` configuration
+export BAT_STYLE="grid"
+export BAT_THEME="Dracula"
