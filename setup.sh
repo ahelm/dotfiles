@@ -8,6 +8,10 @@ warn() {
 log() {
   echo "> $1"
 }
+ensure_installed() {
+  log "checking installation for '$1'"
+  brew list $1 &>/dev/null || brew install $1
+}
 
 link() {
   local from=$PWD/$1
@@ -38,3 +42,10 @@ link "gitconfig" "${HOME}/.gitconfig"
 link "gitignore" "${HOME}/.gitignore"
 link "zshenv" "${HOME}/.zshenv"
 link "vimrc" "${HOME}/.vimrc"
+
+# handy packages - installed by brew
+ensure_installed "bat"
+ensure_installed "exa"
+ensure_installed "dust"
+ensure_installed "fd"
+ensure_installed "ripgrep"
