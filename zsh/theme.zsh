@@ -130,7 +130,8 @@ shrink_path () {
                 echo ${result:-/}
         )
 }
+
 setopt prompt_subst
 
-PROMPT="%F{cyan}►%f "
-RPROMPT='[$(shrink_path -f)]'
+PROMPT=$'%{\e[38;5;7m%}»%f %{\e[0m%}'
+RPROMPT=$'%{\e[38;5;8m%}[$(shrink_path -f)]%{\e[0m%}'
