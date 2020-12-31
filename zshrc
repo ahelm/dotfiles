@@ -18,3 +18,6 @@ if [ -d $ZSH ]; then
 else
   echo "'$ZSH' does not exist!"
 fi
+
+# setting up FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
