@@ -10,3 +10,9 @@ venv() {
     .venv/bin/pip install -U pip > /dev/null
   fi
 }
+
+pulsarvnc() {
+  printf "* Port-forwarding of VNC connection to pulsar ... "
+  ssh -N -f -L 5900:localhost:5900 pulsar
+  echo "done"
+}
