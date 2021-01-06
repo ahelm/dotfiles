@@ -1,4 +1,4 @@
-venv() {
+create_virtual_env() {
   local prompt_name=$1
 
   if [ -z "$1" ]; then
