@@ -8,3 +8,7 @@ export ZSH="${HOME}/.dotfiles/zsh"
 # `bat` configuration
 export BAT_STYLE="grid"
 export BAT_THEME="Dracula"
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
