@@ -9,38 +9,10 @@ setopt interactivecomments
 # jobs
 setopt long_list_jobs
 
-# super user alias
-alias _='sudo '
-
 # Changing/making/removing directory
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
-
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
-
-alias -- -='cd -'
-alias 1='cd -'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
-alias 6='cd -6'
-alias 7='cd -7'
-alias 8='cd -8'
-alias 9='cd -9'
-
-alias md='mkdir -p'
-alias rd=rmdir
-
-# List directory contents
-alias lsa='ls -lah'
-alias l='ls -lah'
-alias ll='ls -lh'
-alias la='ls -lah'
 
 ## History wrapper
 function omz_history {
@@ -83,20 +55,5 @@ setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt share_history          # share command history data
 
-# ls colors
-if command exa &>/dev/null; then
-  alias ls='exa'
-fi
-
-# enable diff color if possible.
-if command diff --color . . &>/dev/null; then
-  alias diff='diff --color'
-fi
-
 setopt auto_cd
 setopt multios
-
-# use bat for cat
-if type "bat" > /dev/null; then
-  alias cat='bat'
-fi
