@@ -1,5 +1,7 @@
 zmodload -i zsh/complist
 
+WORDCHARS=''
+
 unsetopt menu_complete
 unsetopt flowcontrol
 setopt auto_menu
