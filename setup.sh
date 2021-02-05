@@ -24,6 +24,9 @@ link() {
   # link already present
   [ -L "$to" ] && warn "link for '$to' already exist ... skpping" && return
 
+  # ensure parent directory exists
+  [ ! -d "$(dirname $to)" ] && warn "Missing parent directory ... creating " && mkdir -p "$(dirname $to)"
+
   # perform linking
   log "linking '$1' to '$to'"
   ln -v -s $from $to
@@ -42,6 +45,7 @@ link "gitconfig" "${HOME}/.gitconfig"
 link "gitignore" "${HOME}/.gitignore"
 link "zshenv" "${HOME}/.zshenv"
 link "vimrc" "${HOME}/.vimrc"
+link "init.vim" "${HOME}/.config/nvim/init.vim"
 
 # handy packages - installed by brew
 ensure_installed "bat"
