@@ -35,6 +35,7 @@ alias la='ls -lah'
 # ls colors
 if command exa &>/dev/null; then
   alias ls='exa'
+  alias tree="exa --tree"
 fi
 
 # enable diff color if possible.
@@ -46,3 +47,6 @@ fi
 if type "bat" >/dev/null; then
   alias cat='bat'
 fi
+
+# Neovim as default vim editor
+alias vim="nvim"
