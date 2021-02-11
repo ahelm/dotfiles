@@ -57,3 +57,7 @@ setopt share_history          # share command history data
 
 setopt auto_cd
 setopt multios
+
+## Custom completion
+[ -d "${HOME}/.zfunc" ] && fpath=(${HOME}/.zfunc $fpath)
+

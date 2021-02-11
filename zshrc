@@ -8,7 +8,7 @@ source ${HOME}/.zshenv
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
 # custom zsh settings
-autoload -Uz compinit && compinit
+# autoload -Uz compinit && compinit
 if [ -d $ZSH ]; then
   source $ZSH/general.zsh
   source $ZSH/completion.zsh
@@ -19,6 +19,7 @@ if [ -d $ZSH ]; then
 else
   echo "'$ZSH' does not exist!"
 fi
+autoload -Uz compinit && compinit
 
 # setting up FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
