@@ -17,6 +17,7 @@ set clipboard=unnamedplus
 colorscheme dracula
 set termguicolors	" Without it, colors aren't represent correct
 set mouse=a
+let g:mapleader=','
 
 """ LSP configuration
 " Python
