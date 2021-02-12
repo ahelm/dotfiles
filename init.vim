@@ -19,6 +19,8 @@ set termguicolors	" Without it, colors aren't represent correct
 set mouse=a		" Allow all mouse inputs
 let g:mapleader=','	" Remap leader to ,
 set signcolumn=yes      " Keep sign column to avoid flicker
+set expandtab           " tabs are spaces
+set nowrap              " Do not wrap long lines
 nnoremap <space>         /
 nnoremap <leader><space> :nohlsearch<CR>
 
