@@ -16,8 +16,9 @@ set number
 set clipboard=unnamedplus
 colorscheme dracula
 set termguicolors	" Without it, colors aren't represent correct
-set mouse=a
-let g:mapleader=','
+set mouse=a		" Allow all mouse inputs
+let g:mapleader=','	" Remap leader to ,
+set signcolumn=yes      " Keep sign column to avoid flicker
 nnoremap <space>         /
 nnoremap <leader><space> :nohlsearch<CR>
 
