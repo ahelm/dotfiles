@@ -33,6 +33,8 @@ EOF
 lua <<EOF
 require'lspconfig'.vimls.setup{}
 EOF
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 
 """ Treesitter
 lua <<EOF
