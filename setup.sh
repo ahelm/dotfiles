@@ -48,7 +48,7 @@ link "gitconfig" "${HOME}/.gitconfig"
 link "gitignore" "${HOME}/.gitignore"
 link "zshenv" "${HOME}/.zshenv"
 link "vimrc" "${HOME}/.vimrc"
-link "init.vim" "${HOME}/.config/nvim/init.vim"
+link "nvim" "${HOME}/.config/nvim"
 
 # handy packages - installed by brew
 ensure_installed "bat"
