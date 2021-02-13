@@ -18,7 +18,10 @@ link() {
   local to=$2
 
   # issues with from/to
-  [ ! -f "$from" ] && err "File '$from' does not exist ... aborting" && exit
+  if [ ! -f "$from" ] && [ ! -d "$from" ]; then
+    err "File/directory '$from' does not exist ... aborting"
+    exit
+  fi
   [ -f "$to" ] && [ ! -L "$to" ] && err "'$to' already exist and is file ... aborting" && exit
 
   # link already present
