@@ -30,8 +30,29 @@ activate_virtual_env() {
   return 1
 }
 
+update_virtual_env() {
+  local preactivated_env=true
+  
+  # check if inside virtual enviroment
+  if [ -z "$VIRTUAL_ENV" ]; then
+    activate_virtual_env
+    preactivated_env=false
+  fi
+
+  # update pip packages
+  echo "> running update"
+  pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U
+
+  # deactivate previous enviroment if it was not active
+  if [ "$preactived_env" = false ]; then
+    echo "> deactivating virtual enviroment"
+    deactivate
+  fi
+}
+
 pulsarvnc() {
   printf "* Port-forwarding of VNC connection to pulsar ... "
   ssh -N -f -L 5900:localhost:5900 pulsar
   echo "done"
 }
+

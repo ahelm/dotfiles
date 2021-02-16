@@ -1,6 +1,7 @@
 # working with python's virtualenviromnets
 alias venv=create_virtual_env
 alias vact=activate_virtual_env
+alias vupd=update_virtual_env
 
 # super user alias
 alias _='sudo '
