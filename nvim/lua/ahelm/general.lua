@@ -15,7 +15,7 @@ vim.o.termguicolors = true	-- required to make theme look good
 vim.o.expandtab = true		-- Use spaces instead of tabs
 vim.wo.wrap = false		-- Don't wrap lines
 
-vim.o.tabstop = 4 
+vim.o.tabstop = 2
 vim.o.shiftwidth = vim.o.tabstop
 
 
