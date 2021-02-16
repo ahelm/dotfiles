@@ -12,12 +12,12 @@ create_virtual_env() {
 }
 
 activate_virtual_env() {
-  local pwd_array=("${(@s:/:)PWD}")
+  local pwd_array=(${(@s:/:)PWD})
   local dir="$PWD"
 
   # go backwards from current directory and find '.venv' directory
   for ((i=${#pwd_array[@]}; i > 1; i--)); do
-    dir=${(j:/:)pwd_array:0:$i}
+    dir=/${(j:/:)pwd_array:0:$i}
 
     if [ -d "$dir/.venv" ]; then
       echo "> activating '$dir/.venv'"
