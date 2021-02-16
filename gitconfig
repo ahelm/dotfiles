@@ -5,3 +5,4 @@
 [core]
 	whitespace = -trailing-space,-space-before-tab,-indent-with-non-tab
 	excludesfile = ~/.gitignore
+	editor = /Users/anton/.local/bin/nvim
