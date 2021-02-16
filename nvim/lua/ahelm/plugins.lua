@@ -53,4 +53,9 @@ return require('packer').startup(function()
   -- Handy for chaning surrounding
   use { 'tpope/vim-surround' }
 
+  -- Statusline
+  use {
+    'hoob3rt/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
 end)
