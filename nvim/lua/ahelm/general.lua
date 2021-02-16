@@ -1,5 +1,7 @@
 --[[ General settings ]]--
 vim.g.mapleader = ','
+vim.g.backup = false
+vim.g.writebackup = false
 
 vim.o.mouse = 'a'		-- use mouse
 vim.o.clipboard = 'unnamedplus' -- use system clipboard
@@ -15,6 +17,7 @@ vim.wo.wrap = false		-- Don't wrap lines
 
 vim.o.tabstop = 4 
 vim.o.shiftwidth = vim.o.tabstop
+
 
 -- TODO: check if this can be rewritten differently
 result = vim.api.nvim_exec(
