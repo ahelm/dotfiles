@@ -5,7 +5,7 @@ source ${HOME}/.zshenv
 [[ ! -d $ZSH_CACHE_DIR ]] && mkdir -p $ZSH_CACHE_DIR
 
 # homebrew specific -> using Rosetta specific installations
-export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
+export PATH="/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
 
 # custom zsh settings
 # autoload -Uz compinit && compinit
