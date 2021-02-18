@@ -18,25 +18,9 @@ vim.wo.wrap = false		-- Don't wrap lines
 vim.o.tabstop = 2
 vim.o.shiftwidth = vim.o.tabstop
 
-
 -- TODO: check if this can be rewritten differently
 result = vim.api.nvim_exec(
 [[
-" Searching
-nnoremap <space>         /
-nnoremap <leader><space> :nohlsearch<CR>
-
-" LSP settings
-nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-
-" Telescope specific keymaps
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fj <cmd>Telescope git_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
 """ Completion
 " Use completion-nvim in every buffer
 autocmd BufEnter * lua require'completion'.on_attach()
