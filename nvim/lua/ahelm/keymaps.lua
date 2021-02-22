@@ -1,3 +1,12 @@
+-- Save
+vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>update<cr>', { noremap = true })
+vim.api.nvim_set_keymap('v', '<leader>w', '<c-c><cmd>update<cr>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<leader>w', '<c-o><cmd>update<cr>', { noremap = true })
+
+-- Quit
+vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>q<cr>', { noremap = true })
+
+
 -- Search
 vim.api.nvim_set_keymap('n', '<Space>', '/', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader><Space>', ':set nohlsearch<cr>', { noremap = true, silent = true })
@@ -12,3 +21,4 @@ vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { nor
 -- Lsp
 vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { noremap = true, silent = true })
+
