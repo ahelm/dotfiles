@@ -22,6 +22,9 @@ export PATH="/usr/local/bin:$PATH"
 # user-installed
 export PATH="$HOME/.local/bin:$PATH"
 
+# llvm export
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
 # sets LANG enviroment variables -> avoids ssh issues
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.utf8
