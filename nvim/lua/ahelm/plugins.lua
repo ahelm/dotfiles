@@ -49,6 +49,15 @@ return require('packer').startup(function()
 
   -- Git support
   use { 'tpope/vim-fugitive' }
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
 
   -- Handy for chaning surrounding
   use { 'tpope/vim-surround' }
