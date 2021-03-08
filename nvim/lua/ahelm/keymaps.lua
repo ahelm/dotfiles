@@ -6,6 +6,11 @@ vim.api.nvim_set_keymap('i', '<leader>w', '<c-o><cmd>update<cr>', { noremap = tr
 -- Quit
 vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>q<cr>', { noremap = true })
 
+-- Buffer switching
+vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>bprevious<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>m', '<cmd>bnext<cr>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<leader>n', '<cmd>bprevious<cr>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<leader>m', '<cmd>bnext<cr>', { noremap = true })
 
 -- Search
 vim.api.nvim_set_keymap('n', '<Space>', '/', { noremap = true })
