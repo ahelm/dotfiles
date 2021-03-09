@@ -51,8 +51,9 @@ update_virtual_env() {
 }
 
 pulsarvnc() {
-  printf "* Port-forwarding of VNC connection to pulsar ... "
-  ssh -N -f -L 5900:localhost:5900 pulsar
+  printf "* Ensuring port is being forwarded ... "
+  [ $(ps aux | grep "ssh -N -f -L 5959:localhost:5900 pulsar" | wc -l) -eq 1 ] && ssh -N -f -L 5959:localhost:5900 pulsar
   echo "done"
+  open vnc://localhost:5959
 }
 
