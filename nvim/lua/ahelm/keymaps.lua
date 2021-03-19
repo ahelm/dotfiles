@@ -14,8 +14,7 @@ vim.api.nvim_set_keymap('i', '<leader>n', '<cmd>bprevious<cr>', { noremap = true
 vim.api.nvim_set_keymap('i', '<leader>m', '<cmd>bnext<cr>', { noremap = true })
 
 -- Search
-vim.api.nvim_set_keymap('n', '<Space>', '/', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Leader><Space>', ':set nohlsearch<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>/', ':set nohlsearch<cr>', { noremap = true, silent = true })
 
 -- Telescope
 vim.api.nvim_set_keymap('n', '<leader>fj', '<cmd>Telescope git_files<cr>', { noremap = true, silent = true })
