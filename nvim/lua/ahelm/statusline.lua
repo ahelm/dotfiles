@@ -1,4 +1,4 @@
-local lualine = require('lualine')
-lualine.status()
-lualine.options.theme = 'dracula'
+-- local lualine = require('lualine')
+-- lualine.status()
+-- lualine.options.theme = 'dracula'
 

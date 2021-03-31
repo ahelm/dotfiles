@@ -63,8 +63,8 @@ return require('packer').startup(function()
   use { 'tpope/vim-surround' }
 
   -- Statusline
-  use {
-    'hoob3rt/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  }
+  -- use {
+  --   'hoob3rt/lualine.nvim',
+  --   requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  -- }
 end)
