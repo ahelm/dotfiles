@@ -63,10 +63,11 @@ return require('packer').startup(function()
   use { 'tpope/vim-surround' }
 
   -- Statusline
-  -- use {
-  --   'hoob3rt/lualine.nvim',
-  --   requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  -- }
+  use {
+    'hoob3rt/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
+
   -- File Explorer
   use {
     'kyazdani42/nvim-tree.lua',
