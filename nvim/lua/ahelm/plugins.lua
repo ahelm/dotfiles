@@ -67,5 +67,10 @@ return require('packer').startup(function()
   --   'hoob3rt/lualine.nvim',
   --   requires = {'kyazdani42/nvim-web-devicons', opt = true}
   -- }
+  -- File Explorer
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
 end)
 
