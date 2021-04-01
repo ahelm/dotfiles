@@ -18,6 +18,9 @@ vim.wo.wrap = false		-- Don't wrap lines
 vim.o.tabstop = 2
 vim.o.shiftwidth = vim.o.tabstop
 
+-- no swapfiles
+vim.bo.swapfile = false
+
 -- TODO: check if this can be rewritten differently
 result = vim.api.nvim_exec(
 [[
