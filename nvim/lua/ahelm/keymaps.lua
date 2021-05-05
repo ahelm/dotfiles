@@ -5,7 +5,13 @@ vim.api.nvim_set_keymap('i', '<leader>w', '<c-o><cmd>update<cr>', { noremap = tr
 
 -- Quit
 vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>q<cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>Q', '<cmd>q!<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>Q', '<cmd>qa<cr>', { noremap = true })
+
+-- Windows
+vim.api.nvim_set_keymap('n', '<c-h>', '<c-w><c-h>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-j>', '<c-w><c-j>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-k>', '<c-w><c-k>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-l>', '<c-w><c-l>', { noremap = true })
 
 -- Buffer switching
 vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>bprevious<cr>', { noremap = true })
@@ -25,5 +31,5 @@ vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { nor
 
 -- Lsp
 vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { noremap = true, silent = true })
 
