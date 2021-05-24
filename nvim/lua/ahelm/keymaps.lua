@@ -4,7 +4,7 @@ vim.api.nvim_set_keymap('v', '<leader>w', '<c-c><cmd>update<cr>', { noremap = tr
 vim.api.nvim_set_keymap('i', '<leader>w', '<c-o><cmd>update<cr>', { noremap = true })
 
 -- Quit
-vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>q<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>bd<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>Q', '<cmd>qa<cr>', { noremap = true })
 
 -- Windows
