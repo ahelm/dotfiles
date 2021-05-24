@@ -73,5 +73,9 @@ return require('packer').startup(function()
     'kyazdani42/nvim-tree.lua',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
+
+  -- Buffer line
+  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+
 end)
 

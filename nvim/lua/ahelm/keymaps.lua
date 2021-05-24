@@ -14,10 +14,10 @@ vim.api.nvim_set_keymap('n', '<c-k>', '<c-w><c-k>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<c-l>', '<c-w><c-l>', { noremap = true })
 
 -- Buffer switching
-vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>bprevious<cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>m', '<cmd>bnext<cr>', { noremap = true })
-vim.api.nvim_set_keymap('i', '<leader>n', '<cmd>bprevious<cr>', { noremap = true })
-vim.api.nvim_set_keymap('i', '<leader>m', '<cmd>bnext<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>BufferLineCyclePrev<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>m', '<cmd>BufferLineCycleNext<cr>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<leader>n', '<cmd>BufferLineCyclePrev<cr>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<leader>m', '<cmd>BufferLineCycleNext<cr>', { noremap = true })
 
 -- Search
 vim.api.nvim_set_keymap('n', '<leader>/', ':set nohlsearch<cr>', { noremap = true, silent = true })
