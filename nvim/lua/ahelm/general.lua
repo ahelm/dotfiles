@@ -1,25 +1,25 @@
 --[[ General settings ]]--
-vim.g.mapleader = ','
-vim.g.backup = false
-vim.g.writebackup = false
+vim.opt_global.backup = false
+vim.opt_global.writebackup = false
 
-vim.o.mouse = 'a'		-- use mouse
-vim.o.clipboard = 'unnamedplus' -- use system clipboard
+vim.opt_global.mouse = 'a'		 -- use mouse
+vim.opt_global.clipboard = 'unnamedplus' -- use system clipboard
 
-vim.wo.number = true		-- use linenumbers
-vim.wo.signcolumn = 'yes'	-- always keep sign column
+vim.wo.number = true		 -- use linenumbers
+vim.wo.signcolumn = 'yes'	 -- always keep sign column
 
 vim.cmd('colorscheme dracula')
-vim.o.termguicolors = true	-- required to make theme look good
+vim.opt.termguicolors = true	 -- required to make theme look good
 
-vim.o.expandtab = true		-- Use spaces instead of tabs
-vim.wo.wrap = false		-- Don't wrap lines
+vim.opt.expandtab = true		 -- Use spaces instead of tabs
+vim.wo.wrap = false		 -- Don't wrap lines
 
-vim.o.tabstop = 2
-vim.o.shiftwidth = vim.o.tabstop
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 
 -- no swapfiles
-vim.bo.swapfile = false
+vim.opt_local.swapfile = false
 
 -- TODO: check if this can be rewritten differently
 result = vim.api.nvim_exec(

@@ -1,3 +1,6 @@
+-- Leader
+vim.cmd 'let mapleader=","'
+
 -- Save
 vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>update<cr>', { noremap = true })
 vim.api.nvim_set_keymap('v', '<leader>w', '<c-c><cmd>update<cr>', { noremap = true })
