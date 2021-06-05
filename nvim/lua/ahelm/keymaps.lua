@@ -23,7 +23,7 @@ vim.api.nvim_set_keymap('i', '<leader>n', '<cmd>BufferLineCyclePrev<cr>', { nore
 vim.api.nvim_set_keymap('i', '<leader>m', '<cmd>BufferLineCycleNext<cr>', { noremap = true })
 
 -- Search
-vim.api.nvim_set_keymap('n', '<leader>/', ':set nohlsearch<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>/', ':nohlsearch<cr>', { noremap = true, silent = true })
 
 -- Telescope
 vim.api.nvim_set_keymap('n', '<leader>fj', '<cmd>Telescope git_files<cr>', { noremap = true, silent = true })
