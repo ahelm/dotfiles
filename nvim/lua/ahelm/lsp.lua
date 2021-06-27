@@ -12,3 +12,5 @@ require'lspconfig'.pyright.setup{
 require'lspconfig'.vimls.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.clangd.setup{}
+require'lspconfig'.rust_analyzer.setup{}
+
