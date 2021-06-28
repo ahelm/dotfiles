@@ -34,7 +34,7 @@ vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { nor
 
 -- Lsp
 vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { noremap = true, silent = true })
 
 -- File Explorer
 vim.api.nvim_set_keymap('n', '<c-n>', '<cmd>NvimTreeToggle<cr>', {noremap = true})
