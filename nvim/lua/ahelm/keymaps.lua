@@ -39,3 +39,5 @@ vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { noremap 
 -- File Explorer
 vim.api.nvim_set_keymap('n', '<c-n>', '<cmd>NvimTreeToggle<cr>', {noremap = true})
 
+-- Fugitive
+vim.api.nvim_set_keymap('n', '<leader>gg', '<cmd>Git<cr>', {noremap = true})
