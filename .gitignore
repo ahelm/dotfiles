@@ -1,3 +1,5 @@
 .python-version
 packer_compiled.vim
 .DS_Store
+nvim/plugin/packer_compiled.lua
+
