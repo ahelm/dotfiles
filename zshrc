@@ -13,17 +13,8 @@ export BAT_THEME="Dracula"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
-# Other tools install in /usr/local/bin
-export PATH="/usr/local/bin:$PATH"
-
-# Homebrew M1 installation
-export PATH="/opt/homebrew/bin:$PATH"
-
 # user-installed
 export PATH="$HOME/.local/bin:$PATH"
-
-# llvm export
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 # sets LANG enviroment variables -> avoids ssh issues
 export LANG=en_US.UTF-8
@@ -50,7 +41,7 @@ if [ -d $ZSH ]; then
   source $ZSH/theme.zsh
   source $ZSH/functions.zsh
   source $ZSH/alias.zsh
-  source $(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
   echo "'$ZSH' does not exist!"
 fi
