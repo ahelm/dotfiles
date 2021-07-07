@@ -10,7 +10,7 @@ log() {
 }
 ensure_installed() {
   log "checking installation for '$1'"
-  brew list $1 &>/dev/null || brew install $1
+  sudo apt install -y $1
 }
 
 link() {
@@ -49,9 +49,8 @@ link "gitignore" "${HOME}/.gitignore"
 link "vimrc" "${HOME}/.vimrc"
 link "nvim" "${HOME}/.config/nvim"
 
-# handy packages - installed by brew
+# handy packages - installed by 'apt'
 ensure_installed "bat"
 ensure_installed "exa"
-ensure_installed "dust"
-ensure_installed "fd"
+ensure_installed "fd-find"
 ensure_installed "ripgrep"
