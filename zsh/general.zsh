@@ -1,8 +1,3 @@
-# zsh-comlpetions by homebrew
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-fi
-
 # recognize comments
 setopt interactivecomments
 
