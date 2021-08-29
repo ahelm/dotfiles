@@ -24,6 +24,13 @@ vim.opt_local.swapfile = false
 -- TODO: check if this can be rewritten differently
 result = vim.api.nvim_exec(
 [[
+""" Spelling checks
+augroup gitCommitSpell
+    autocmd!
+    autocmd FileType COMMIT_EDITMSG setlocal spell
+    autocmd BufRead,BufNewFile COMMIT_EDITMSG setlocal spell
+augroup END
+
 """ Completion
 " Use completion-nvim in every buffer
 autocmd BufEnter * lua require'completion'.on_attach()
