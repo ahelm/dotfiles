@@ -32,8 +32,9 @@ return require('packer').startup(function()
   -- Colorscheme
   use { 'dracula/vim', as = 'dracula' }
 
-  -- LSP config
+  -- LSP config & install
   use { 'neovim/nvim-lspconfig' }
+  use { 'kabouzeid/nvim-lspinstall' }
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
