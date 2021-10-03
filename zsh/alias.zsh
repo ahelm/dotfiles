@@ -49,5 +49,3 @@ if type "bat" >/dev/null; then
   alias cat='bat'
 fi
 
-# Neovim as default vim editor
-alias vim="nvim"
