@@ -5,4 +5,4 @@ require('ahelm.treesitter')
 require('ahelm.lsp')
 require('ahelm.statusline')
 require('ahelm.bufferline')
-
+require('ahelm.nvimtree')
