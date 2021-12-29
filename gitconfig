@@ -1,0 +1,19 @@
+[user]
+	name = Anton Helm
+	email = a.helm87@gmail.com
+	signingkey = 6496B3E10C55493A
+[core]
+	whitespace = -trailing-space,-space-before-tab,-indent-with-non-tab
+	excludesfile = ~/.gitignore
+	editor = nvim
+[commit]
+	verbose = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
