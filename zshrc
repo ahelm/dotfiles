@@ -13,31 +13,31 @@ export BAT_THEME="Dracula"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
-# Other tools install in /usr/local/bin
-export PATH="/usr/local/bin:$PATH"
-
-# Homebrew M1 installation
-export PATH="/opt/homebrew/bin:$PATH"
-
-# user-installed
-export PATH="$HOME/.local/bin:$PATH"
-
-# llvm export
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-
-# sets LANG enviroment variables -> avoids ssh issues
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.utf8
-export LC_NUMERIC=en_US.UTF-8
-export LC_TIME=en_US.UTF-8
-export LC_MONETARY=en_US.UTF-8
-export LC_PAPER=en_US.UTF-8
-export LC_IDENTIFICATION=en_US.UTF-8
-export LC_NAME=en_US.UTF-8
-export LC_ADDRESS=en_US.UTF-8
-export LC_TELEPHONE=en_US.UTF-8
-export LC_MEASUREMENT=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+## Mac setup
+if [[ `uname` == "Darwin" ]]; then
+  # Homebrew M1 installation
+  export PATH="/opt/homebrew/bin:$PATH"
+  
+  # Other tools install in /usr/local/bin
+  export PATH="/usr/local/bin:$PATH"
+  
+  # llvm export
+  export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+  
+  # sets LANG enviroment variables -> avoids ssh issues
+  export LANG=en_US.UTF-8
+  export LANGUAGE=en_US.utf8
+  export LC_NUMERIC=en_US.UTF-8
+  export LC_TIME=en_US.UTF-8
+  export LC_MONETARY=en_US.UTF-8
+  export LC_PAPER=en_US.UTF-8
+  export LC_IDENTIFICATION=en_US.UTF-8
+  export LC_NAME=en_US.UTF-8
+  export LC_ADDRESS=en_US.UTF-8
+  export LC_TELEPHONE=en_US.UTF-8
+  export LC_MEASUREMENT=en_US.UTF-8
+  export LC_ALL=en_US.UTF-8
+fi
 
 # makes sure a cache dir exists
 [[ ! -d $ZSH_CACHE_DIR ]] && mkdir -p $ZSH_CACHE_DIR
@@ -50,7 +50,11 @@ if [ -d $ZSH ]; then
   source $ZSH/theme.zsh
   source $ZSH/functions.zsh
   source $ZSH/alias.zsh
-  source $(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  if [[ `uname` == "Darwin" ]]; then
+    source $(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  elif [ -n "$(uname -a | grep Ubuntu)" ]; then
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+  fi
 else
   echo "'$ZSH' does not exist!"
 fi
