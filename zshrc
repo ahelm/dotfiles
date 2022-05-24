@@ -1,3 +1,12 @@
+# Load linuxbrew
+if [ -n "$(uname -a | grep Ubuntu)" ]; then
+  if [ -d ${HOME}/.linuxbrew ]; then
+    eval "$(${HOME}/.linuxbrew/bin/brew shellenv)"
+  else
+    echo "WARNING: no valid brew installation found"
+  fi
+fi
+
 # Use local compiled binaries
 [[ -d "${HOME}/.local/bin" ]] && export PATH="${HOME}/.local/bin:$PATH"
 [[ -f "${HOME}/.cargo/env" ]] && source "$HOME/.cargo/env"
