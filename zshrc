@@ -72,3 +72,6 @@ autoload -Uz compinit && compinit
 # setting up FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Enviroment variables
+set HOMEBREW_NO_ENV_HINTS
+
