@@ -65,13 +65,6 @@ ensure_installed ripgrep
 ensure_installed git
 ensure_installed neovim
 
-# install packer for neovim
-if [ ! -d $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim ]; then
-  log "cloning 'packer'"
-  git clone --depth 1 https://github.com/wbthomason/packer.nvim  \
-    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-fi
-
 # fzf installation
 if [ ! -d $HOME/.fzf ]; then
   git clone https://github.com/junegunn/fzf.git $HOME/.fzf
