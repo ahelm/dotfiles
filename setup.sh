@@ -10,6 +10,7 @@ warn() {
 log() {
   echo "> $1"
 }
+
 ensure_installed() {
   if ! command -v brew &> /dev/null; then
     err "Requires brew to be installed"
@@ -37,7 +38,6 @@ link() {
   [ ! -d "$(dirname $to)" ] && warn "Missing parent directory ... creating " && mkdir -p "$(dirname $to)"
 
   # perform linking
-  log "linking '$1' to '$to'"
   ln -v -s $from $to
 }
 
