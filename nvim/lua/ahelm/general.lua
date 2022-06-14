@@ -2,17 +2,18 @@
 vim.opt_global.backup = false
 vim.opt_global.writebackup = false
 
-vim.opt_global.mouse = 'a'		 -- use mouse
+vim.opt_global.mouse = 'a'		         -- use mouse
 vim.opt_global.clipboard = 'unnamedplus' -- use system clipboard
 
-vim.wo.number = true		 -- use linenumbers
-vim.wo.signcolumn = 'yes'	 -- always keep sign column
+vim.wo.number = true		             -- use linenumbers
+vim.wo.signcolumn = 'yes'	             -- always keep sign column
 
 vim.cmd('colorscheme dracula')
-vim.opt.termguicolors = true	 -- required to make theme look good
+vim.opt.termguicolors = true	         -- required to make theme look good
 
-vim.opt.expandtab = true		 -- Use spaces instead of tabs
-vim.wo.wrap = false		 -- Don't wrap lines
+vim.opt.expandtab = true		         -- Use spaces instead of tabs
+-- Don't wrap lines
+vim.wo.wrap = false		                 
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 4
