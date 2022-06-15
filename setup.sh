@@ -1,10 +1,10 @@
 #!/bin/bash
 err() {
-  echo >&2 "ERROR:: $1"
+  echo >&2 "ERROR :: $1"
 }
 
 warn() {
-  echo "WARN:: $1"
+  echo "WARN :: $1"
 }
 
 log() {
