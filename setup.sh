@@ -56,7 +56,7 @@ link vimrc	${HOME}/.vimrc
 link nvim	${HOME}/.config/nvim
 
 # only if 'i3' is present as executable
-if ! command -v i3; then
+if ! command -v i3 &> /dev/null; then
   link i3     ${HOME}/.config/i3/config
 else
   warn "Skipping 'i3' installation"
