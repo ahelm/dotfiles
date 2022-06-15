@@ -1,3 +1,4 @@
+# vim: set syntax=i3config:
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
