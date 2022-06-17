@@ -7,3 +7,4 @@
 -- require('ahelm.bufferline')
 -- require('ahelm.nvimtree')
 require("user.keymaps")
+require("user.autocommands")
