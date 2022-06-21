@@ -21,12 +21,6 @@ keymap("n", "<c-j>", "<c-w><c-j>", opts)
 keymap("n", "<c-k>", "<c-w><c-k>", opts)
 keymap("n", "<c-l>", "<c-w><c-l>", opts)
 
--- Buffer switching
-keymap("n", "<leader>n", "<cmd>bprevious<cr>", opts)
-keymap("n", "<leader>m", "<cmd>bnext<cr>", opts)
-keymap("i", "<leader>n", "<cmd>bprevious<cr>", opts)
-keymap("i", "<leader>m", "<cmd>bnext<cr>", opts)
-
 -- Search
 keymap("n", "<leader> ", ":nohlsearch<cr>", opts)
 
