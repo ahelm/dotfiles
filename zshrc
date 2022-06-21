@@ -26,13 +26,13 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 if [[ `uname` == "Darwin" ]]; then
   # Homebrew M1 installation
   export PATH="/opt/homebrew/bin:$PATH"
-  
+
   # Other tools install in /usr/local/bin
   export PATH="/usr/local/bin:$PATH"
-  
+
   # llvm export
   export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-  
+
   # sets LANG enviroment variables -> avoids ssh issues
   export LANG=en_US.UTF-8
   export LANGUAGE=en_US.utf8
@@ -62,7 +62,7 @@ if [ -d $ZSH ]; then
   if [[ `uname` == "Darwin" ]]; then
     source $(brew --prefix zsh-syntax-highlighting)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   elif [ -n "$(uname -a | grep Ubuntu)" ]; then
-    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   fi
 else
   echo "'$ZSH' does not exist!"
@@ -74,4 +74,3 @@ autoload -Uz compinit && compinit
 
 # Enviroment variables
 set HOMEBREW_NO_ENV_HINTS
-

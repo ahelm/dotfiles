@@ -10,4 +10,3 @@ au BufNewFile,BufRead *.py
     \ set autoindent
     \ set fileformat=unix
 set encoding=utf-8
-

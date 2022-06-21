@@ -57,6 +57,16 @@ return packer.startup(function(use)
   use "nacro90/numb.nvim"
   use { "echasnovski/mini.nvim", branch = "stable" }
 
+  -- Neovim cmp with additional plugins
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
+  use "hrsh7th/cmp-cmdline"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-emoji"
+  use "hrsh7th/cmp-nvim-lua"
+
+
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()

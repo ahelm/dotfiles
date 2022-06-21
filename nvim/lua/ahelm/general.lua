@@ -13,7 +13,7 @@ vim.opt.termguicolors = true	         -- required to make theme look good
 
 vim.opt.expandtab = true		         -- Use spaces instead of tabs
 -- Don't wrap lines
-vim.wo.wrap = false		                 
+vim.wo.wrap = false
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 4
@@ -40,4 +40,3 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 ]],
 true)
-

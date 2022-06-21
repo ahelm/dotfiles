@@ -73,4 +73,3 @@ fi
 if ! command -v fzf &> /dev/null; then
   $HOME/.fzf/install --key-bindings --completion --no-update-rc --no-bash --no-fish
 fi
-

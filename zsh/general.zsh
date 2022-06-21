@@ -60,4 +60,3 @@ setopt multios
 
 ## Custom completion
 [ -d "${HOME}/.zfunc" ] && fpath=(${HOME}/.zfunc $fpath)
-

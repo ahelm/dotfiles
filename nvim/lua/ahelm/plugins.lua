@@ -1,7 +1,7 @@
 --[[ Plugins ]]--
 -- Packer as Plugin manager
 local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
- 
+
 if not packer_exists then
   print("> Missing 'packer.nvim'")
   local directory = string.format(
@@ -82,4 +82,3 @@ return require('packer').startup(function()
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
 end)
-

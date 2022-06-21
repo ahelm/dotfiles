@@ -32,7 +32,7 @@ activate_virtual_env() {
 
 update_virtual_env() {
   local preactivated_env=true
-  
+
   # check if inside virtual enviroment
   if [ -z "$VIRTUAL_ENV" ]; then
     activate_virtual_env
@@ -56,4 +56,3 @@ pulsarvnc() {
   echo "done"
   open vnc://localhost:5959
 }
-
