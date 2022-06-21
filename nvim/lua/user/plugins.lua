@@ -55,6 +55,7 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "nacro90/numb.nvim"
+  use { "echasnovski/mini.nvim", branch = "stable" }
 
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
