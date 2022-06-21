@@ -1,13 +1,8 @@
 require "user.general"
-
--- require('ahelm.plugins')
--- require('ahelm.general')
--- require('ahelm.keymaps')
--- require('ahelm.treesitter')
--- require('ahelm.lsp')
--- require('ahelm.statusline')
--- require('ahelm.bufferline')
--- require('ahelm.nvimtree')
-require("user.keymaps")
-require("user.autocommands")
-require("user.plugins")
+require "user.keymaps"
+require "user.plugins"
+require "user.colorscheme"
+require "user.comment"
+require "user.nvim-tree"
+require "user.bufferline"
+require "user.lualine"
