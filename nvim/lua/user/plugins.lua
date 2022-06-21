@@ -53,6 +53,7 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
