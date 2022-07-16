@@ -57,7 +57,7 @@ return packer.startup(function(use)
   use "nacro90/numb.nvim"
   use { "echasnovski/mini.nvim", branch = "stable" }
 
-  -- Neovim cmp with additional plugins
+  -- CMP
   -- TODO: Setup correct symbols and icons
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer"
@@ -65,6 +65,14 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline"
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
+
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "simrat39/symbols-outline.nvim"
+  use "RRethy/vim-illuminate"
 
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
