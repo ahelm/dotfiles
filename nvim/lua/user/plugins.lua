@@ -63,8 +63,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-cmdline"
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
+  -- use "hrsh7th/cmp-nvim-lsp"
+  -- use "hrsh7th/cmp-nvim-lua"
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
