@@ -63,15 +63,12 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-cmdline"
-  -- use "hrsh7th/cmp-nvim-lsp"
-  -- use "hrsh7th/cmp-nvim-lua"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "simrat39/symbols-outline.nvim"
+  use "neovim/nvim-lspconfig"
+  use "williamboman/nvim-lsp-installer"
   use "RRethy/vim-illuminate"
 
   -- Put this at the end after all plugins
